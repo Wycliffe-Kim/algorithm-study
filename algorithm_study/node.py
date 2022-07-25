@@ -25,9 +25,15 @@ class Node(Generic[T]):
         return (left_depth if left_depth > right_depth else right_depth) + 1
 
     def inorder(self):
-        traversal = concat(
+        return concat(
             self.__left.inorder() if self.__left is not None else [],
             self.__data,
             self.__right.inorder() if self.__right is not None else []
         )
-        return traversal
+
+    def preorder(self):
+        return concat(
+            self.__data,
+            self.__left.inorder() if self.__left is not None else [],
+            self.__right.inorder() if self.__right is not None else []
+        )
