@@ -59,7 +59,7 @@ def case2():
     f.contruct(right=h)
     bst = BinarySearchTree[int, str](a)
     print('inorder', bst.inorder())
-    print('inorder', bst.min())
+    print('min', bst.min().value)
     print_end()
 
 
