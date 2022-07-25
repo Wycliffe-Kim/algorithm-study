@@ -1,3 +1,5 @@
+from algorithm_study.binary_search_tree import BinarySearchTree
+from algorithm_study.bst_node import BstNode
 from algorithm_study.node import Node
 from algorithm_study.binary_tree import BinaryTree
 
@@ -43,6 +45,20 @@ def case1():
 
 def case2():
     print_case(2)
+    a = BstNode[int, str](5, 'John')
+    b = BstNode[int, str](2, 'David')
+    c = BstNode[int, str](8, 'Mary')
+    d = BstNode[int, str](1, 'Patrick')
+    e = BstNode[int, str](4, 'Sue')
+    f = BstNode[int, str](6, 'Anne')
+    g = BstNode[int, str](9, 'Clara')
+    h = BstNode[int, str](7, 'Peter')
+    a.contruct(left=b, right=c)
+    b.contruct(left=d, right=e)
+    c.contruct(left=f, right=g)
+    f.contruct(right=h)
+    bst = BinarySearchTree[int, str](a)
+    print('inorder', bst.inorder())
     print_end()
 
 
