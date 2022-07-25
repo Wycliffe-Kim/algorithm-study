@@ -28,3 +28,10 @@ class BinarySearchTree(Generic[T1, T2]):
 
     def lookup(self, key: T1):
         return self.__root.lookup(key) if self.__root is not None else {"self": None, "parent": None}
+
+    def insert(self, key: T1, value: T2):
+        if self.__root is not None:
+            self.__root.insert(key, value)
+        else:
+            self.__root = BstNode(key, value)
+        return self

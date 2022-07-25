@@ -68,3 +68,23 @@ class BstNode(Generic[T1, T2]):
             return caseSelfSmaller(self, key, parent)
 
         return {"self": self, "parent": parent}
+
+    def insert(self, key: T1, value: T2):
+        def caseSelfBigger(self, key: T1, value: T2):
+            if self.__left is not None:
+                self.__left.insert(key, value)
+            else:
+                self.__left = BstNode[T1, T2](key, value)
+
+        def caseSelfSmaller(self, key: T1, value: T2):
+            if self.__right is not None:
+                self.__right.insert(key, value)
+            else:
+                self.__right = BstNode[T1, T2](key, value)
+
+        if self.__key > key:
+            caseSelfBigger(self, key, value)
+        elif self.__key < key:
+            caseSelfSmaller(self, key, value)
+        # else:
+        #     raise KeyError(f'key "{key}" already exists!')

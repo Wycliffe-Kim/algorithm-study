@@ -1,3 +1,4 @@
+from pydash import map_, for_each
 from algorithm_study.binary_search_tree import BinarySearchTree
 from algorithm_study.bst_node import BstNode
 from algorithm_study.node import Node
@@ -61,7 +62,10 @@ def case2():
     print('inorder', bst.inorder())
     print('min', bst.min().value)
     print('max', bst.max().value)
-    print('lookup', bst.lookup(1)["self"].value)
+    print('lookup', bst.lookup(9)["self"].value)
+    result = bst.insert(3, 'test').inorder()
+    print('insert', map_(
+        result, lambda data: f'|key: {data.key}, value: {data.value}| '))
     print_end()
 
 
