@@ -9,3 +9,6 @@ class BinaryTree(Generic[T]):
 
     def __init__(self, root: Node[T]):
         self.__root = root
+
+    def size(self):
+        return self.__root.size() if self.__root is not None else 0
