@@ -1,6 +1,9 @@
-from pydash import map_, for_each
+from random import random
+from pydash import map_
 from algorithm_study.binary_search_tree import BinarySearchTree
 from algorithm_study.bst_node import BstNode
+from algorithm_study.map_heap_item import MaxHeapItem
+from algorithm_study.max_heap import MaxHeap
 from algorithm_study.node import Node
 from algorithm_study.binary_tree import BinaryTree
 
@@ -11,6 +14,10 @@ def print_case(case: int):
 
 def print_end():
     print('')
+
+
+def generate_random_number(min: float = 0, max: float = 100):
+    return random() * (max - min) + min
 
 
 def case1():
@@ -70,6 +77,35 @@ def case2():
     print_end()
 
 
+def case3():
+    print_case(3)
+    max_heap = MaxHeap()
+
+    (
+        max_heap
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .insert(MaxHeapItem[float, str](generate_random_number(), f'test{generate_random_number()}'))
+        .map(lambda item: print(str(item)))
+    )
+    print_end()
+
+
 def main():
     case1()
     case2()
+    case3()
