@@ -60,6 +60,7 @@ def case2():
     bst = BinarySearchTree[int, str](a)
     print('inorder', bst.inorder())
     print('min', bst.min().value)
+    print('max', bst.max().value)
     print_end()
 
 

@@ -22,3 +22,6 @@ class BinarySearchTree(Generic[T1, T2]):
 
     def min(self):
         return self.__root.min() if self.__root is not None else None
+
+    def max(self):
+        return self.__root.max() if self.__root is not None else None

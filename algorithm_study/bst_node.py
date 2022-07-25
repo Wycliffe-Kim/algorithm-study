@@ -51,3 +51,6 @@ class BstNode(Generic[T1, T2]):
 
     def min(self):
         return self.__left.min() if self.__left is not None else self
+
+    def max(self):
+        return self.__right.max() if self.__right is not None else self
