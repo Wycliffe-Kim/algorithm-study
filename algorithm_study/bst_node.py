@@ -54,3 +54,17 @@ class BstNode(Generic[T1, T2]):
 
     def max(self):
         return self.__right.max() if self.__right is not None else self
+
+    def lookup(self, key: T1, parent: Any = None):
+        def caseSelfBigger(self, key: T1, parent: Any):
+            return self.__left.lookup(key, parent) if self.__left is not None else {"self": None, "parent": None}
+
+        def caseSelfSmaller(self, key: T1, parent: Any):
+            return self.__right.lookup(key, parent) if self.__right is not None else {"self": None, "parent": None}
+
+        if self.__key > key:
+            return caseSelfBigger(self, key, parent)
+        elif self.__key < key:
+            return caseSelfSmaller(self, key, parent)
+
+        return {"self": self, "parent": parent}

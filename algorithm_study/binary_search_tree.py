@@ -25,3 +25,6 @@ class BinarySearchTree(Generic[T1, T2]):
 
     def max(self):
         return self.__root.max() if self.__root is not None else None
+
+    def lookup(self, key: T1):
+        return self.__root.lookup(key) if self.__root is not None else {"self": None, "parent": None}

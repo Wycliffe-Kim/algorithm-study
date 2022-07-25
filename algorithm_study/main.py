@@ -61,6 +61,7 @@ def case2():
     print('inorder', bst.inorder())
     print('min', bst.min().value)
     print('max', bst.max().value)
+    print('lookup', bst.lookup(1)["self"].value)
     print_end()
 
 
