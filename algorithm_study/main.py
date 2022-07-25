@@ -2,7 +2,16 @@ from algorithm_study.node import Node
 from algorithm_study.binary_tree import BinaryTree
 
 
-def main():
+def print_case(case: int):
+    print(f'----- case{case} -----')
+
+
+def print_end():
+    print('')
+
+
+def case1():
+    print_case(1)
     a = Node[int](0)
     b = Node[int](1)
     c = Node[int](2)
@@ -29,3 +38,14 @@ def main():
     print('preorder', tree.preorder())
     print('postorder', tree.postorder())
     print('bft', tree.bft())
+    print_end()
+
+
+def case2():
+    print_case(2)
+    print_end()
+
+
+def main():
+    case1()
+    case2()
