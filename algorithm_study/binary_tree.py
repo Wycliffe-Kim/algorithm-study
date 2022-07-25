@@ -19,3 +19,6 @@ class BinaryTree(Generic[T]):
 
     def preorder(self):
         return self.__root.preorder() if self.__root is not None else []
+
+    def postorder(self):
+        return self.__root.postorder() if self.__root is not None else []

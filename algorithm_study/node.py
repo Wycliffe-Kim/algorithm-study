@@ -37,3 +37,10 @@ class Node(Generic[T]):
             self.__left.inorder() if self.__left is not None else [],
             self.__right.inorder() if self.__right is not None else []
         )
+
+    def postorder(self):
+        return concat(
+            self.__left.inorder() if self.__left is not None else [],
+            self.__right.inorder() if self.__right is not None else [],
+            self.__data
+        )

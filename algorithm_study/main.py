@@ -27,3 +27,4 @@ def main():
     print('depth', tree.depth())
     print('inorder', tree.inorder())
     print('preorder', tree.preorder())
+    print('postorder', tree.postorder())
