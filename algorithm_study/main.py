@@ -15,21 +15,12 @@ def main():
     j = Node[int](9)
     k = Node[int](10)
 
-    a.left = b
-    a.right = c
-
-    b.left = d
-    b.right = e
-
-    c.left = f
-    c.right = g
-
-    d.left = h
-    d.right = i
-
-    f.right = j
-
-    i.right = k
+    a.contruct(left=b, right=c)
+    b.contruct(left=d, right=e)
+    c.contruct(left=f, right=g)
+    d.contruct(left=h, right=i)
+    f.contruct(right=j)
+    i.contruct(right=k)
 
     tree = BinaryTree[int](a)
     print('size', tree.size())
