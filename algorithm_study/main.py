@@ -25,3 +25,4 @@ def main():
     tree = BinaryTree[int](a)
     print('size', tree.size())
     print('depth', tree.depth())
+    print('inorder', tree.inorder())
