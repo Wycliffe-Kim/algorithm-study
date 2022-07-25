@@ -18,3 +18,12 @@ class Node(Generic[T]):
         left_depth = self.left.depth() if self.left is not None else 1
         right_depth = self.right.depth() if self.left is not None else 1
         return (left_depth if left_depth > right_depth else right_depth) + 1
+
+    def inorder(self):
+        traversal = []
+        if self.left is not None:
+            traversal += self.left.inorder()
+        traversal.append(self.data)
+        if self.right is not None:
+            traversal += self.right.inorder()
+        return traversal

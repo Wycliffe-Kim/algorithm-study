@@ -13,3 +13,6 @@ class BinaryTree(Generic[T]):
 
     def depth(self):
         return self.__root.depth() if self.__root is not None else 0
+
+    def inorder(self):
+        return self.__root.inorder() if self.__root is not None else []
