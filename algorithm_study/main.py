@@ -54,10 +54,10 @@ def case2():
     f = BstNode[int, str](6, 'Anne')
     g = BstNode[int, str](9, 'Clara')
     h = BstNode[int, str](7, 'Peter')
-    a.contruct(left=b, right=c)
-    b.contruct(left=d, right=e)
-    c.contruct(left=f, right=g)
-    f.contruct(right=h)
+    a.construct(left=b, right=c)
+    b.construct(left=d, right=e)
+    c.construct(left=f, right=g)
+    f.construct(right=h)
     bst = BinarySearchTree[int, str](a)
     print('inorder', bst.inorder())
     print('min', bst.min().value)
@@ -66,6 +66,7 @@ def case2():
     result = bst.insert(3, 'test').inorder()
     print('insert', map_(
         result, lambda data: f'|key: {data.key}, value: {data.value}| '))
+    print('remove', bst.remove(3).lookup(3))
     print_end()
 
 
