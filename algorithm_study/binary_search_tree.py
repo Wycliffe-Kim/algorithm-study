@@ -19,3 +19,6 @@ class BinarySearchTree(Generic[T1, T2]):
 
     def inorder(self):
         return self.__root.inorder() if self.__root is not None else []
+
+    def min(self):
+        return self.__root.min() if self.__root is not None else None

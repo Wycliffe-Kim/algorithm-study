@@ -48,3 +48,6 @@ class BstNode(Generic[T1, T2]):
             self,
             self.__right.inorder() if self.__right is not None else []
         )
+
+    def min(self):
+        return self.__left.min() if self.__left is not None else self
