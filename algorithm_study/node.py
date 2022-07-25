@@ -4,20 +4,16 @@ T = TypeVar('T')
 
 
 class Node(Generic[T]):
-    __data: T
-    __left: Node[T] | None
-    __right: Node[T] | None
+    data: T
+    left: Node[T] | None
+    right: Node[T] | None
 
     def __init__(self, item: T):
-        self.__data = item
-        self.__left = None
-        self.__right = None
-
-    @property
-    def item(self):
-        return self.__data
+        self.data = item
+        self.left = None
+        self.right = None
 
     def size(self):
-        left_size = self.__left.size() if self.__left is not None else 0
-        right_size = self.__right.size() if self.__right is not None else 0
+        left_size = self.left.size() if self.left is not None else 0
+        right_size = self.right.size() if self.right is not None else 0
         return left_size + right_size + 1
