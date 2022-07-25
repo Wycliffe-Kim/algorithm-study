@@ -28,3 +28,4 @@ def main():
     print('inorder', tree.inorder())
     print('preorder', tree.preorder())
     print('postorder', tree.postorder())
+    print('bft', tree.bft())

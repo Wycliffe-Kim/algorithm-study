@@ -1,5 +1,7 @@
 from typing import Generic, TypeVar
 from algorithm_study.node import Node
+from pydash import map_, join
+from queue import Queue
 
 T = TypeVar('T')
 
@@ -22,3 +24,17 @@ class BinaryTree(Generic[T]):
 
     def postorder(self):
         return self.__root.postorder() if self.__root is not None else []
+
+    def bft(self):
+        traversal = []
+        queue = Queue()
+        queue.put(self.__root)
+        while queue.empty() is False:
+            elem = queue.get()
+            traversal.append(elem.data)
+            if elem.left is not None:
+                queue.put(elem.left)
+            if elem.right is not None:
+                queue.put(elem.right)
+
+        return traversal

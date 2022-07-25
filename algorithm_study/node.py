@@ -10,6 +10,18 @@ class Node(Generic[T]):
         self.__left = left
         self.__right = right
 
+    @property
+    def data(self):
+        return self.__data
+
+    @property
+    def left(self):
+        return self.__left
+
+    @property
+    def right(self):
+        return self.__right
+
     def contruct(self, *, left: Any = None, right: Any = None):
         self.__left = left
         self.__right = right
