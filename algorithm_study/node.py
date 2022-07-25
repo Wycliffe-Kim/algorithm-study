@@ -16,3 +16,8 @@ class Node(Generic[T]):
     @property
     def item(self):
         return self.__data
+
+    def size(self):
+        left_size = self.__left.size() if self.__left is not None else 0
+        right_size = self.__right.size() if self.__right is not None else 0
+        return left_size + right_size + 1
