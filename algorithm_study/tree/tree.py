@@ -1,6 +1,6 @@
 from typing import Generic, TypeVar
-from algorithm_study.node import Node
 from queue import Queue
+from algorithm_study.tree.node import Node
 
 T = TypeVar('T')
 

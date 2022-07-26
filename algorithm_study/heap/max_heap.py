@@ -1,7 +1,7 @@
 from toolz import curry
 from typing import TypeVar, Generic, Callable
 from pydash import for_each as _for_each
-from algorithm_study.map_heap_item import MaxHeapItem
+from algorithm_study.heap.max_heap_item import MaxHeapItem
 
 K = TypeVar('K')
 V = TypeVar('V')

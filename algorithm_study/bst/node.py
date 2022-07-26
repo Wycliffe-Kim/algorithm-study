@@ -6,7 +6,7 @@ T1 = TypeVar('T1')
 T2 = TypeVar('T2')
 
 
-class BstNode(Generic[T1, T2]):
+class Node(Generic[T1, T2]):
     def __init__(self, key: T1, value: T2, *, left: Any = None, right: Any = None):
         self.__key = key
         self.__value = value
@@ -34,10 +34,10 @@ class BstNode(Generic[T1, T2]):
         return self.__right
 
     def has_left(self):
-        return BstNode.is_valid(self.__left)
+        return Node.is_valid(self.__left)
 
     def has_right(self):
-        return BstNode.is_valid(self.__right)
+        return Node.is_valid(self.__right)
 
     def construct(self, *, left: Any = None, right: Any = None):
         self.__left = left
@@ -87,13 +87,13 @@ class BstNode(Generic[T1, T2]):
             if self.has_left():
                 self.__left.insert(key, value)
             else:
-                self.__left = BstNode[T1, T2](key, value)
+                self.__left = Node[T1, T2](key, value)
 
         def case_self_smaller(self, key: T1, value: T2):
             if self.has_right():
                 self.__right.insert(key, value)
             else:
-                self.__right = BstNode[T1, T2](key, value)
+                self.__right = Node[T1, T2](key, value)
 
         if self.__key > key:
             case_self_bigger(self, key, value)

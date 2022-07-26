@@ -1,13 +1,13 @@
 from toolz import pipe, curry
 from typing import Generic, TypeVar
-from algorithm_study.bst_node import BstNode
+from algorithm_study.bst.node import Node
 
 T1 = TypeVar('T1')
 T2 = TypeVar('T2')
 
 
 class BinarySearchTree(Generic[T1, T2]):
-    def __init__(self, root: BstNode[T1, T2]):
+    def __init__(self, root: Node[T1, T2]):
         self.__root = root
 
     def __has_root(self):
@@ -35,7 +35,7 @@ class BinarySearchTree(Generic[T1, T2]):
         if self.__has_root():
             self.__root.insert(key, value)
         else:
-            self.__root = BstNode(key, value)
+            self.__root = Node(key, value)
         return self
 
     def remove(self, key):
@@ -49,7 +49,7 @@ class BinarySearchTree(Generic[T1, T2]):
                 # node 가 왼쪽 자식인지 오른쪽 자식인지 판단하여
                 # parent.left 또는 parent.right 를 None 으로 하여
                 # leaf node 였던 자식을 트리에서 끊어내어 없앱니다.
-                if BstNode.is_valid(parent):
+                if Node.is_valid(parent):
                     if parent.left == node:
                         parent.construct(left=None, right=parent.right)
                     else:
@@ -68,14 +68,14 @@ class BinarySearchTree(Generic[T1, T2]):
             if children_count == 1:
                 # 하나 있는 자식이 왼쪽인지 오른쪽인지를 판단하여
                 # 그 자식을 어떤 변수가 가리키도록 합니다.
-                if BstNode.is_valid(node.left):
+                if Node.is_valid(node.left):
                     child = node.left
                 else:
                     child = node.right
                 # 만약 parent 가 있으면
                 # node 가 왼쪽 자식인지 오른쪽 자식인지 판단하여
                 # 위에서 가리킨 자식을 대신 node 의 자리에 넣습니다.
-                if BstNode.is_valid(parent):
+                if Node.is_valid(parent):
                     if parent.left == node:
                         parent.construct(left=child, right=parent.right)
                     else:
@@ -99,7 +99,7 @@ class BinarySearchTree(Generic[T1, T2]):
                 # successor 로부터 왼쪽 자식의 링크를 반복하여 따라감으로써
                 # 순환문이 종료할 때 successor 는 바로 다음 키를 가진 노드를,
                 # 그리고 parent 는 그 노드의 부모 노드를 가리키도록 찾아냅니다.
-                while BstNode.is_valid(successor.left):
+                while Node.is_valid(successor.left):
                     parent = successor
                     successor = successor.left
                 # 삭제하려는 노드인 node 에 successor 의 key 와 data 를 대입합니다.
