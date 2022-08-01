@@ -1,4 +1,4 @@
 # Algorithm Study
 
-- [leetcode](./leetcode/README.md)
-- [programmers](./programmers/README.md)
+- [leetcode](./leetcode/)
+- [programmers](./programmers/)
