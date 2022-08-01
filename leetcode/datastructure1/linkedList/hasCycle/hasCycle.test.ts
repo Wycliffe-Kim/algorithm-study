@@ -1,4 +1,5 @@
-import { hasCycle, ListNode } from './hasCycle';
+import { ListNode } from '../ListNode';
+import { hasCycle } from './hasCycle';
 
 test('head = [3,2,0,-4], pos = 1', () => {
   const head = new ListNode(3);
