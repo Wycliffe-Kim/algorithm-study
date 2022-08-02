@@ -19,6 +19,10 @@ export class ListNode {
   };
 
   static fromList = (list: number[]) => {
+    if (list.length === 0) {
+      return null;
+    }
+
     const pop = (list: number[]) => {
       type Result = { value: number; list: number[] };
       const result: Result = { value: Number.MIN_VALUE, list: [] };
