@@ -17,4 +17,30 @@ export class ListNode {
 
     return result;
   };
+
+  static fromList = (list: number[]) => {
+    const pop = (list: number[]) => {
+      type Result = { value: number; list: number[] };
+      const result: Result = { value: Number.MIN_VALUE, list: [] };
+
+      if (list.length > 0) {
+        result.value = list[0];
+        list = list.slice(1, list.length);
+        result.list = [...list];
+        return result;
+      }
+
+      return result;
+    };
+
+    let popResult = pop(list);
+    const result = new ListNode(popResult.value);
+    let tempNode = result;
+    while (popResult.list.length) {
+      popResult = pop(popResult.list);
+      tempNode.next = new ListNode(popResult.value);
+      tempNode = tempNode.next;
+    }
+    return result;
+  };
 }
