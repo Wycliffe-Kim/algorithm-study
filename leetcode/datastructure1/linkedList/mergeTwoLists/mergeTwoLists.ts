@@ -56,17 +56,6 @@ export function mergeTwoLists(
     return null;
   }
 
-  const toList = (node: ListNode | null) => {
-    const result = [];
-    let next = node;
-    while (next) {
-      result.push(next.val);
-      next = next.next;
-    }
-
-    return result;
-  };
-
   const pop = (list: number[]) => {
     type Result = { value: number; list: number[] };
     const result: Result = { value: Number.MIN_VALUE, list: [] };
@@ -81,8 +70,8 @@ export function mergeTwoLists(
     return result;
   };
 
-  const _list1 = toList(list1);
-  const _list2 = toList(list2);
+  const _list1 = ListNode.toList(list1);
+  const _list2 = ListNode.toList(list2);
   const nums = new Array<number>().concat(_list1, _list2);
   const m = _list1.length;
   const n = _list2.length;
