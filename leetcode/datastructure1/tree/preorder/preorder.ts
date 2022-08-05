@@ -14,16 +14,5 @@ const preorder = (node: TreeNode | null, result: number[]) => {
 };
 
 export function preorderTraversal(root: TreeNode | null): number[] {
-  let result: number[] = [];
-  if (!root) {
-    return [];
-  }
-
-  if (!root.left && !root.right) {
-    return concat(result, root.val);
-  }
-
-  result = preorder(root, result);
-
-  return result;
+  return preorder(root, []);
 }
