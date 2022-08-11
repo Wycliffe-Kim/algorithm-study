@@ -5,8 +5,8 @@ export function searchInsertPosition(nums: number[], target: number): number {
   let min = 0;
   let max = nums.length;
   let guess = getGuess(min, max);
-  console.log('----------------');
-  console.log('start', `guess: ${guess}`, `min: ${min}`, `max: ${max}`);
+  // console.log('----------------');
+  // console.log('start', `guess: ${guess}`, `min: ${min}`, `max: ${max}`);
 
   let result = nums.length;
   while (true) {
@@ -25,14 +25,14 @@ export function searchInsertPosition(nums: number[], target: number): number {
 
       max = guess;
       guess = getGuess(min, max);
-      console.log(
-        'case A',
-        `guess: ${guess}`,
-        `min: ${min}`,
-        `max: ${max}`,
-        `nums[guess]: ${nums[guess]}`,
-        `target: ${target}`
-      );
+      // console.log(
+      //   'case A',
+      //   `guess: ${guess}`,
+      //   `min: ${min}`,
+      //   `max: ${max}`,
+      //   `nums[guess]: ${nums[guess]}`,
+      //   `target: ${target}`
+      // );
     } else if (nums[guess] < target) {
       if (guess + 1 < nums.length) {
         if (nums[guess + 1] >= target) {
@@ -48,14 +48,14 @@ export function searchInsertPosition(nums: number[], target: number): number {
 
       min = guess;
       guess = getGuess(min, max);
-      console.log(
-        'case B',
-        `guess: ${guess}`,
-        `min: ${min}`,
-        `max: ${max}`,
-        `nums[guess]: ${nums[guess]}`,
-        `target: ${target}`
-      );
+      // console.log(
+      //   'case B',
+      //   `guess: ${guess}`,
+      //   `min: ${min}`,
+      //   `max: ${max}`,
+      //   `nums[guess]: ${nums[guess]}`,
+      //   `target: ${target}`
+      // );
     }
   }
 
