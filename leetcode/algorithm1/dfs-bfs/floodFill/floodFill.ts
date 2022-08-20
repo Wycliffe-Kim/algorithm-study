@@ -105,7 +105,6 @@ export function floodFill(
   stack = _push(stack, sr, sc);
 
   while (stack.length > 0) {
-    console.log(stack);
     const indexes = stack.pop();
     if (indexes) {
       const [row, col] = indexes;
