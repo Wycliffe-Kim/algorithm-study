@@ -1,5 +1,5 @@
-import { ListNode } from '../../../datastructure1/linkedList/ListNode';
-import { pipe2 } from '../../../functions/pipe';
+import { pipe2 } from '../functions/pipe';
+import { ListNode } from '../ListNode';
 import { removeNthFromEnd } from './removeNthFromEnd';
 
 test('head = [1,2,3,4,5], n = 2', () => {

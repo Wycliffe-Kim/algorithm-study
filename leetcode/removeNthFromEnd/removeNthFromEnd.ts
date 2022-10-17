@@ -1,4 +1,4 @@
-import { ListNode } from '../../../datastructure1/linkedList/ListNode';
+import { ListNode } from '../ListNode';
 
 export function removeNthFromEnd(
   head: ListNode | null,

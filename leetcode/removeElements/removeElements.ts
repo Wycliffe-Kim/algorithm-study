@@ -1,4 +1,4 @@
-import { pipe3 } from '../../../functions/pipe';
+import { pipe3 } from '../functions/pipe';
 import { ListNode } from '../ListNode';
 
 export function removeElements(

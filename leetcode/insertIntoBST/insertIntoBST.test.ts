@@ -1,5 +1,5 @@
-import { pipe3 } from '../../../functions/pipe';
 import { bft } from '../bft/bft';
+import { pipe3 } from '../functions/pipe';
 import { TreeNode } from '../TreeNode';
 import { insertIntoBST } from './insertIntoBST';
 
