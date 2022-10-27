@@ -28,7 +28,7 @@ const uniquePathWithDP = (
 };
 
 const uniqueWithCombination = (m: number, n: number) => {
-  return combination(m + n - 2, m - 1); // or combination(m + n - 2, n - 2)
+  return combination(m + n - 2, m - 1); // or combination(m + n - 2, n - 1)
 };
 
 export function uniquePaths(m: number, n: number) {
